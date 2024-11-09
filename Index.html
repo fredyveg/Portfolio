@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Jose Lago - Frontend Developer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+  <script src="scripts.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Nav bar -->
+    <header>
+      <nav class="navbar">
+        <div class="brand">
+          <h2><span>J</span>L</h2>
+        </div>
+
+        <ul class="menu">
+          <li><a href="#inicio" class="active">Inicio</a></li>
+          <li><a href="#about">Quien Soy</a></li>
+          <li><a href="#portfolio">Portafolio</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      </nav>
+    </header>
+
+
+    <!-- Script Hamburger NAV BAR-->
+    <script>
+      function toggleMenu() {
+        document.querySelector('.menu').classList.toggle('active');
+      }
+
+      // Selecciona todos los enlaces dentro del menú
+      const menuLinks = document.querySelectorAll('.menu li a');
+
+      // Agrega un evento de clic a cada enlace para cerrar el menú automáticamente
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelector('.menu').classList.remove('active');
+        });
+      });
+    </script>
+
+    <!-- Main-->
+    <main class="main" id="inicio">
+      <div class="info-content">
+        <h1>Soy <span>Jose</span> Lago</h1>
+        <p>Frontend Developer</p>
+        <a download href="Archivos/Curriculum Vitae.pdf">
+          <button class="download-cv">Descargar CV</button>
+        </a>
+      </div>
+    </main>
+
+    <!-- About me -->
+    <div id="about" class="about">
+      <div class="about-content">
+        <img class="about-img" src="assets/img/casual2.jpeg" alt="Foto complementaria de Jose Lago">
+        <div class="about-info">
+          <h2>Acerca de mí</h2>
+          <div class="divider"></div>
+          <p class="about-description">
+            👋¡Hola! Soy José, un Help Desk Analyst en Stefanini y estudiante de programación y desarrollo de software.
+            ADEMASSSS....
+            <br><br>
+            💻Me gusta crear y crecer a través de la tecnología, tanto a nivel profesional como
+            personal.
+            Me considero alguien proactivo, apasionado por la innovación y siempre dispuesto a superar mis propios
+            límites, ya sea en lo técnico o en las habilidades blandas.
+            <br><br>
+            🚀Me encanta el desafío de aportar al desarrollo de proyectos que realmente hagan la diferencia. Estoy
+            buscando ser parte de equipos y comunidades con visión, que valoren el aprendizaje continuo y la
+            colaboración.
+
+            Gracias por tomarte un momento para conocerme. ¡Espero que podamos crecer juntos!🙌
+          </p>
+          <button id="toggle-btn" class="btn-toggle" onclick="toggleAboutInfo()">Ver más</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script About me "ver mas"-->
+    <script>
+      function toggleAboutInfo() {
+        const description = document.querySelector('.about-description');
+        const button = document.querySelector('#toggle-btn');
+        description.classList.toggle('expanded');
+        button.textContent = description.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
+      }
+    </script>
+
+
+    <!-- Portfolio -->
+    <div id="portfolio" class="portfolio">
+      <div class="portfolio-heading">
+        <h2>Mi Portafolio</h2>
+      </div>
+      <div class="container">
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__title">
+            <h2>Tienda de Mate<br>E-commerce</h2>
+            <p></p>
+          </div>
+          <div class="card__proyect-links">
+            <a href="https://github.com/fredyveg" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://tiendademate.vercel.app/" target="_blank"><i class="fas fa-globe-asia"></i></a>
+          </div>
+        </div>
+        <!-- Tarjeta de Proyecto 2-->
+        <div class="card">
+          <div class="card__imgP2"></div>
+          <div class="card__title">
+            <h2>Próximamente...</h2>
+            <p>Estamos trabajando en algo increíble. ¡Pronto más detalles!</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta de Proyecto 3-->
+        <div class="card">
+          <div class="card__imgP3"></div>
+          <div class="card__title">
+            <h2>Próximamente...</h2>
+            <p>Estamos trabajando en algo increíble. ¡Pronto más detalles!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="contact-section">
+      <div class="contact-heading">
+        <h2>Contactame!</h2>
+      </div>
+      <div class="container-contact">
+        <div class="contact-form">
+          <h4>Enviar un mensaje...</h4>
+          <form class="form-group">
+            <input type="text" placeholder="Nombre" class="input" required>
+            <input type="email" placeholder="Email" class="input" required>
+            <textarea name="message" placeholder="Pon tu mensaje aquí..." required></textarea>
+            <button type="submit" class="btn-submit">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <h2>Jose Lago</h2>
+      </div>
+      <div class="social-networks">
+        <a href="https://www.instagram.com/a_lfree" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/jose-lago/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </footer>
+  </div>
+
+
+
+</body>
+
+</html>
