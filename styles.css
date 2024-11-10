@@ -126,7 +126,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 7em 2em;
-  background-color: #f0f0f0;
+  background-color: #f0f8ff;
   margin-top: 2em;
 }
 
@@ -229,11 +229,12 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-10px);
+    box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.3);
 }
 
 .card__img {
@@ -293,6 +294,53 @@ body {
 
 .card__proyect-links a:hover {
   color: aqua;
+}
+/* ---------------------------------Tech section ------------------------------------------*/
+
+.technologies {
+  padding: 4em 2em;
+  background-color: #191c32;
+  text-align: center;
+}
+
+.technologies h2 {
+  font-size: 2.5em;
+  margin-bottom: 2em;
+}
+
+/* Flexbox para las tarjetas */
+.tech-flex {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se muevan a la siguiente fila si no caben en una */
+  justify-content: space-around; /* Distribuye los elementos de manera equitativa */
+  gap: 1em; /* Espacio entre las tarjetas */
+}
+
+.tech-item {
+  background-color: #2b3058;
+  padding: 2em;
+  border-radius: 10px;
+  text-align: center;
+  flex-basis: calc(33.33% - 1em); /* Cada tarjeta ocupará el 33.33% del ancho, menos el espacio de gap */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-10px); /* Efecto de elevación */
+  box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+.tech-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1em;
+}
+
+.tech-item h3 {
+  font-size: 1.2em;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 1em;
 }
 
 /*---------------------------------------- Contact section --------------------------------------*/
@@ -459,7 +507,7 @@ textarea {
     background-color: #191c32;
     gap: 1.5em;
     padding-top: 2em;
-    transition: right 0.4s ease; /* Transición suave */
+    transition: right 0.4s ease;  
   }
 
   .menu li {
@@ -472,8 +520,7 @@ textarea {
     z-index: 1000;
   }
 
-  /* Muestra el menú cuando está activo */
-  .menu.active {
-    right: 0; /* Mueve el menú a la vista */
+   .menu.active {
+    right: 0; 
   }
  }
